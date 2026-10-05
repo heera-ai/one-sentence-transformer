@@ -1,0 +1,253 @@
+:root {
+  --bg: #edf1f5;
+  --paper: #ffffff;
+  --ink: #16213a;
+  --ink-2: #4a5672;
+  --ink-3: #7b869d;
+  --line: #cbd3df;
+  --line-soft: #dfe5ec;
+  /* Three colours carry meaning everywhere: talk = attention, think = MLP,
+     and a teal/rose pair for positive/negative numbers. */
+  --talk: #4450d8;
+  --talk-soft: #e3e6fb;
+  --think: #a86800;
+  --think-fill: #f2b63c;
+  --think-soft: #fcefd0;
+  --pos: #0b8f86;
+  --neg: #c93c6e;
+  --display: 'Bricolage Grotesque Variable', system-ui, sans-serif;
+  --body: 'Literata Variable', Georgia, serif;
+  --mono: 'JetBrains Mono Variable', ui-monospace, Menlo, monospace;
+  --rail: 272px;
+  --measure: 40rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.09rem;
+  line-height: 1.68;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--display);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0;
+  font-variation-settings: 'wdth' 88;
+}
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 750;
+}
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  margin-top: 3.2rem;
+  margin-bottom: 0.9rem;
+}
+h3 {
+  font-size: 1.18rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin: 0 0 1.1rem;
+  max-width: var(--measure);
+}
+ul,
+ol {
+  max-width: var(--measure);
+  padding-left: 1.3rem;
+  margin: 0 0 1.1rem;
+}
+li {
+  margin-bottom: 0.35rem;
+}
+a {
+  color: var(--talk);
+  text-underline-offset: 0.18em;
+}
+strong {
+  font-weight: 680;
+}
+
+code,
+.mono {
+  font-family: var(--mono);
+  font-size: 0.86em;
+}
+p code,
+li code {
+  background: #dfe5ec;
+  padding: 0.08em 0.32em;
+  border-radius: 4px;
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  cursor: pointer;
+}
+:focus-visible {
+  outline: 3px solid var(--talk);
+  outline-offset: 2px;
+}
+
+.btn {
+  font-family: var(--display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 1.05rem;
+}
+.btn:hover {
+  background: #26345a;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.btn.quiet {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--ink);
+}
+.btn.quiet:hover {
+  background: #dfe5ec;
+}
+
+/* A live figure: the place where the learner's own sentence is shown. */
+.fig {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.25rem 1.35rem 1.35rem;
+  margin: 1.6rem 0 2rem;
+  max-width: 62rem;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+.fig > :first-child {
+  margin-top: 0;
+}
+.fig p {
+  max-width: 46rem;
+}
+.fig-title {
+  font-weight: 650;
+  font-size: 1.02rem;
+  margin: 0 0 0.25rem;
+}
+.fig-note {
+  color: var(--ink-2);
+  margin: 0 0 0.9rem;
+  font-size: 0.92rem;
+}
+.readout {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  min-height: 1.4em;
+  margin: 0.5rem 0 0;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  align-items: center;
+  margin: 0.4rem 0 1rem;
+}
+.controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.scroll-x {
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+.talk {
+  color: var(--talk);
+}
+.think {
+  color: var(--think);
+}
+.muted {
+  color: var(--ink-2);
+}
+.num {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  font-variant-numeric: tabular-nums;
+}
+
+.aside {
+  border-left: 3px solid var(--line);
+  padding: 0.1rem 0 0.1rem 1rem;
+  color: var(--ink-2);
+  font-size: 0.98rem;
+  max-width: var(--measure);
+  margin: 0 0 1.2rem;
+}
+.aside p:last-child {
+  margin-bottom: 0;
+}
+
+table.plain {
+  border-collapse: collapse;
+  font-family: var(--display);
+  font-size: 0.93rem;
+  margin: 0 0 1.4rem;
+  max-width: 100%;
+}
+table.plain th,
+table.plain td {
+  text-align: left;
+  padding: 0.45rem 1rem 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+table.plain th {
+  font-weight: 650;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Let wide content scroll inside its own box, never the page. */
+.fig .two > *,
+.fig .gelu > *,
+.fig .dot > * {
+  min-width: 0;
+}

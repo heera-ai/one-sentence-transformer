@@ -1,0 +1,18 @@
+[project]
+name = "tiny-gpt"
+version = "0.1.0"
+description = "The tiny GPT behind 'One Sentence, All the Way Through'"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.4",
+    "tokenizers>=0.20",
+    "numpy>=2.0",
+    "requests>=2.32",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
